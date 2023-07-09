@@ -1,0 +1,7 @@
+---
+permalink: /404.html
+layout: default
+---
+
+# 404
+### This is 404 page and there is nothing else to see yet :flushed:

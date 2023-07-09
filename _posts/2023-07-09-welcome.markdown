@@ -1,0 +1,14 @@
+---
+layout: post
+title:  "Welcome!"
+date:   2023-07-09 13:08:33 +0300
+categories: playground
+---
+How hard can it be?
+
+{% highlight C# %}
+void Start()
+{
+  UnityEngine.Debug.Log("Welcome");
+}
+{% endhighlight %}

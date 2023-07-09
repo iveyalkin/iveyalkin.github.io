@@ -41,5 +41,5 @@ Android SDK, Java, Kotlin
 Android SDK, Java <br/>
 iOS, Obj-C
 
-##### If you read that far you might be really interested in my experience (or stakling me :alien:) 
+##### If you read that far you might be really interested in my experience (or stalking me :alien:) 
 I knORw 8 bit of: JavaScript, SQL, ActionScript3, Jenkins, Hg, Subversion

@@ -27,6 +27,20 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
+  # download unity webgl artifact from a private repo
+  download-landscape-webgl-demo:
+    runs-on: ubuntu-latest
+    steps:
+      - name: List Releases
+        run: gh release list --repo iveyalkin/landscape-webgl
+        env:
+          GITHUB_TOKEN: ${{ secrets.PRIVATE_REPO_TOKEN }}
+      - name: Fetch asset
+        run: gh release download --pattern '*' --dir playground/landscape/build --repo iveyalkin/landscape-webgl --clobber
+        env:
+          GITHUB_TOKEN: ${{ secrets.PRIVATE_REPO_TOKEN }}
+      - name: List fetch result
+        run: ls
   # Build job
   build:
     runs-on: ubuntu-latest

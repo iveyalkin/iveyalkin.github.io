@@ -40,15 +40,12 @@ description: >- # ignore newlines
 domain: iveyalkin.github.io
 baseurl: "" # the subpath of the site, e.g. /blog
 url: https://iveyalkin.github.io # the base hostname & protocol
-#twitter_username: jekyllrb
-github_username:  iveyalkin
 
 author:
   name: IV
   email: "iv.conduct@gmail.com"
 
-feed:
-  enabled: false
+# google_analytics: UA-NNNNNNNN-N
 
 #==========================
 # Site Configuration
@@ -56,6 +53,10 @@ feed:
 
 minima:
   skin: auto
+  social_links:
+    - platform: github
+      user_url: "https://github.com/iveyalkin"
+      title: scrap yard
 
 # What to show in navigation bar
 header_pages:

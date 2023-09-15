@@ -7,7 +7,7 @@ permalink: /about
 <div style="font-size:8pt; color:#CCC">
 &lt;!--
     <div style="font-size:16pt; padding-left:12px;">
-        :warning:<a href="#present">HR friendly version</a> :bow:
+        <a href="#present">! HR friendly version ¡</a>
     </div>
 --&gt;
 </div>
@@ -38,6 +38,7 @@ permalink: /about
 // ^ Code, Space, and Time, actually.
 </div>
 
+---
 ## Present
 #### Full-time mobile game developer :joystick:
 Since 2019 <br/>

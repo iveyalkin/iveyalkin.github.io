@@ -1,45 +1,75 @@
 ---
 layout: page
-title: About
+title: About IV
 permalink: /about
 ---
 
-## ref\* IV;
-### \{ Code\* monkey / Android / Unity \} :space_invader:
-(\*) Code, Space and Time, actually. With solid SOLID understanding :sweat_smile: can also discuss M-V-[P | VM | C] and the rest of the alphabet.
+<div style="font-size:8pt; color:#CCC">
+&lt;!--
+    <div style="font-size:16pt; padding-left:12px;">
+        :glasses: <a href="#present">HR friendly version</a> :warning:
+    </div>
+--&gt;
+</div>
+
+## ref\* IV; // :space_invader:
+
+<div style="background-color:#888; color:#CCC; box-shadow:10px 10px; padding: 8px; margin-bottom:32px;">
+    IV = (ref*) malloc
+        <div style="display: inline; font-size:16pt; color:#EEE">
+            (<a style="color:#FFF" href="#code-space-time">Code monkey</a> | Android | Unity\)
+        </div>;
+    <br/>
+    std::cout <<
+        <div style="padding-left:32px; color: #FFF">
+            "The monkey can discuss M-V-[P | VM | C] and the rest of the alphabet. Although, with SOLID understanding. :sweat_smile:"
+        </div>
+    << std::endl;
+    <br/>
+    free (IV); // :bomb:
+</div>
 
 [[email me]](mailto:iv.conduct@gmail.com)
 [[discord]]()
 [[More Contacts]](/contacts)
 
-## Present 
-#### Full-time mobile game developer
+<a name="code-space-time" />
+<div style="color:#DDD">
+// ^ Code, Space, and Time, actually.
+</div>
+
+## Present
+#### Full-time mobile game developer :joystick:
 Since 2019 <br/>
 Unity, C#
+Mobile game genres:
 - Mid-Core
 - Battler
 - Hyper Casual
-- Idle
+- Idler
 
 Contribution: build MVPs from the ground up. Setup and support CI/CD build pipelines. Maintain projects during various user tests, A/B, Tech/Soft/Global launch phases. Throw most of it into the bin.
 
-Experiance with: Unity batchmode & build automation, Git, GitLab CI/CD, Bash
+Experiance with: Unity batchmode & build automation, Git, GitLab CI/CD, Docker, Bash
 
 ## Past
-#### Full-time Android mobile developer
+#### Full-time Android software engineer :mobile_phone:
 2018-2019 <br/>
 Android SDK & NDK, Java, Kotlin, C++
 - Karaoke app, audio processing leveraging Superpowered SDK
 
-#### Self-employed Android mobile developer
+#### Self-employed Android software engineer :mobile_phone:
 2015-2018 <br/>
 Android SDK, Java, Kotlin
 - Consumer service online directory platform
 
-#### Full-time iOS/Android mobile developer
+#### Full-time Android/iOS software engineer :mobile_phone:
 2012-2015 <br/>
 Android SDK, Java <br/>
 iOS, Obj-C
 
-##### If you read that far you might be really interested in my experience (or stalking me :alien:) 
-I knORw 8 bit of: JavaScript, SQL, ActionScript3, Jenkins, Hg, Subversion
+##### Congrats reading that far! :alien:
+---
+Education: MS in CS :man_student:
+
+Other tags: JavaScript, HTML, CSS, SQL

@@ -7,7 +7,7 @@ permalink: /about
 <div style="font-size:8pt; color:#CCC">
 &lt;!--
     <div style="font-size:16pt; padding-left:12px;">
-        :eyeglasses: <a href="#present">HR friendly version</a> :warning:
+        :warning:<a href="#present">HR friendly version</a> :bow:
     </div>
 --&gt;
 </div>
@@ -41,7 +41,7 @@ permalink: /about
 ## Present
 #### Full-time mobile game developer :joystick:
 Since 2019 <br/>
-Unity, C#
+Unity, C# <br/>
 Mobile game genres:
 - Mid-Core
 - Battler
@@ -53,17 +53,17 @@ Contribution: build MVPs from the ground up. Setup and support CI/CD build pipel
 Experiance with: Unity batchmode & build automation, Git, GitLab CI/CD, Docker, Bash
 
 ## Past
-#### Full-time Android software engineer :mobile_phone:
+#### Full-time Android software engineer :iphone:
 2018-2019 <br/>
 Android SDK & NDK, Java, Kotlin, C++
-- Karaoke app, audio processing leveraging Superpowered SDK
+- Karaoke app (audio processing, Superpowered SDK)
 
-#### Self-employed Android software engineer :mobile_phone:
+#### Self-employed Android software engineer :iphone:
 2015-2018 <br/>
 Android SDK, Java, Kotlin
 - Consumer service online directory platform
 
-#### Full-time Android/iOS software engineer :mobile_phone:
+#### Full-time Android/iOS software engineer :iphone:
 2012-2015 <br/>
 Android SDK, Java <br/>
 iOS, Obj-C

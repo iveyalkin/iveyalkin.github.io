@@ -17,7 +17,7 @@ permalink: /about
 <div style="background-color:#888; color:#CCC; box-shadow:10px 10px; padding: 8px; margin-bottom:32px;">
     IV = (ref*) malloc
         <div style="display: inline; font-size:16pt; color:#EEE">
-            (<a style="color:#FFF" href="#code-space-time">Code monkey</a> | Android | Unity\)
+            (<a style="color:#FFF" href="#code-space-time">Code monkey</a> | Android | Unity)
         </div>;
     <br/>
     std::cout <<

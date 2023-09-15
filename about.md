@@ -7,7 +7,7 @@ permalink: /about
 <div style="font-size:8pt; color:#CCC">
 &lt;!--
     <div style="font-size:16pt; padding-left:12px;">
-        :glasses: <a href="#present">HR friendly version</a> :warning:
+        :eyeglasses: <a href="#present">HR friendly version</a> :warning:
     </div>
 --&gt;
 </div>

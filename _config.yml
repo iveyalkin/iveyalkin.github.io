@@ -18,21 +18,49 @@
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
 
+#==========================
+# Theme & Plugins
+#==========================
+
+# theme: minima
+remote_theme: jekyll/minima
+plugins:
+  - jekyll-remote-theme
+  - jemoji
+  - jekyll-sitemap
+  - jekyll-seo-tag
+
+#==========================
+# Meta
+#==========================
+
 title: IV business card
-email: iv.conduct@gmail.com
-description: >- # this means to ignore newlines until "baseurl:"
+description: >- # ignore newlines
   IV: Unity / Android / Code monkey
 domain: iveyalkin.github.io
 baseurl: "" # the subpath of the site, e.g. /blog
 url: https://iveyalkin.github.io # the base hostname & protocol
-twitter_username: jekyllrb
-github_username:  jekyll
+#twitter_username: jekyllrb
+github_username:  iveyalkin
 
-# Build settings
-theme: minima
-plugins:
-  - jekyll-feed
-  - jemoji
+author:
+  name: IV
+  email: "iv.conduct@gmail.com"
+
+feed:
+  enabled: false
+
+#==========================
+# Site Configuration
+#==========================
+
+minima:
+  skin: auto
+
+# What to show in navigation bar
+header_pages:
+  - about.md
+  - contacts.md
 
 # Exclude from processing.
 # The following items will not be processed, by default.

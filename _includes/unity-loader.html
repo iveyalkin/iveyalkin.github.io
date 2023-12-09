@@ -19,17 +19,16 @@
         document.body.style.textAlign = "left";
     }
 
-    const playgroundUrl = "/playground"
-    const buildUrl = playgroundUrl + "/" + {{ page.buildUrl }} // "/landscape"
+    const playgroundUrl = "/playground";
+    const buildUrl = playgroundUrl + "/" + "{{ page.buildUrl }}";
     const loaderUrl = buildUrl + "/WebGL.loader.js";
-    const productName = {{ page.buildTitle }} // "Landscape WebGL demo"
     const config = {
         dataUrl: buildUrl + "/WebGL.data.unityweb",
         frameworkUrl: buildUrl + "/WebGL.framework.js.unityweb",
         codeUrl: buildUrl + "/WebGL.wasm.unityweb",
         streamingAssetsUrl: "StreamingAssets",
         companyName: "iv.conduct",
-        productName: productName,
+        productName: "{{ page.buildTitle }}",
         productVersion: "0.0.2",
         // matchWebGLToCanvasSize: false, // Uncomment this to separately control WebGL canvas render size and DOM element size.
         // devicePixelRatio: 1, // Uncomment this to override low DPI rendering on high DPI displays.

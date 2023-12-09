@@ -40,21 +40,23 @@ permalink: /about
 
 ---
 ## Present
-#### Full-time mobile game developer :joystick:
+#### Mobile game developer :joystick:
 Since 2019 <br/>
 Unity, C# <br/>
 Mobile game genres:
-- Mid-Core
-- Battler
-- Hyper Casual
+- Mid-Core, Battler, Adventure
 - Idler
+- Hyper Casual
 
-Contribution: build MVPs from the ground up. Setup and support CI/CD build pipelines. Maintain projects during various user tests, A/B, Tech/Soft/Global launch phases. Throw most of it into the bin.
+Responsibilities & Contribution:
+- Build MVPs from the ground up. Design architecture. Implement Gameplay and Business features.
+- Setup and support CI/CD build pipelines. Orchestrate multiplatform builds.
+- Maintain projects during various stages like User tests, A/B, Tech/Soft/Global launch phases.
 
-Experiance with: Unity batchmode & build automation, Git, GitLab CI/CD, Docker, Bash
+Experiance with: Unity game engine, Unity batchmode & build automation, Git, GitLab CI/CD, Docker/Podman, Bash
 
 ## Past
-#### Full-time Android software engineer :iphone:
+#### Android software engineer :iphone:
 2018-2019 <br/>
 Android SDK & NDK, Java, Kotlin, C++
 - Karaoke app (audio processing, Superpowered SDK)
@@ -64,12 +66,11 @@ Android SDK & NDK, Java, Kotlin, C++
 Android SDK, Java, Kotlin
 - Consumer service online directory platform
 
-#### Full-time Android/iOS software engineer :iphone:
+#### Android/iOS software engineer :iphone:
 2012-2015 <br/>
 Android SDK, Java <br/>
 iOS, Obj-C
 
-##### Congrats reading that far! :alien:
 ---
 Education: MS in CS :man_student:
 

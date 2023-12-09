@@ -10,4 +10,4 @@ unityCanvasHeight: 600
 unityCanvasBackground: #231F20
 ---
 
-## Landscape WebGL demo
+A tiny WebGL demo called "Landscape". Nothing fancy. Just testing pipeline.

@@ -1,0 +1,59 @@
+<script src="/assets/js/unity-page.js"></script>
+<script>
+    const unityCanvas = document.querySelector("#unity-canvas");
+    const unityLoadingBar = document.querySelector("#unity-loading-bar");
+    const unityProgressBarFull = document.querySelector("#unity-progress-bar-full");
+    const unityFullscreenButton = document.querySelector("#unity-fullscreen-button");
+
+    if (/iPhone|iPad|iPod|Android/i.test(navigator.userAgent)) {
+        // Mobile device style: fill the whole browser client area with the game canvas:
+        const meta = document.createElement('meta');
+        meta.name = 'viewport';
+        meta.content = 'width=device-width, height=device-height, initial-scale=1.0, user-scalable=no, shrink-to-fit=yes';
+        document.getElementsByTagName('head')[0].appendChild(meta);
+
+        unityCanvas.style.width = "100%";
+        unityCanvas.style.height = "100%";
+        unityCanvas.style.position = "fixed";
+
+        document.body.style.textAlign = "left";
+    }
+
+    const playgroundUrl = "/playground"
+    const buildUrl = playgroundUrl + "/" + {{ page.buildUrl }} // "/landscape"
+    const loaderUrl = buildUrl + "/WebGL.loader.js";
+    const productName = {{ page.buildTitle }} // "Landscape WebGL demo"
+    const config = {
+        dataUrl: buildUrl + "/WebGL.data.unityweb",
+        frameworkUrl: buildUrl + "/WebGL.framework.js.unityweb",
+        codeUrl: buildUrl + "/WebGL.wasm.unityweb",
+        streamingAssetsUrl: "StreamingAssets",
+        companyName: "iv.conduct",
+        productName: productName,
+        productVersion: "0.0.2",
+        // matchWebGLToCanvasSize: false, // Uncomment this to separately control WebGL canvas render size and DOM element size.
+        // devicePixelRatio: 1, // Uncomment this to override low DPI rendering on high DPI displays.
+    };
+
+    unityLoadingBar.style.display = "block";
+
+    const unityWebGlLoader = document.createElement("script");
+    unityWebGlLoader.src = loaderUrl;
+    unityWebGlLoader.onload = () => {
+        createUnityInstance(unityCanvas, config, (progress) => {
+            unityProgressBarFull.style.width = 100 * progress + "%";
+        })
+        .then((unityInstance) => {
+                unityLoadingBar.style.display = "none";
+
+                unityFullscreenButton.onclick = () => {
+                    unityInstance.SetFullscreen(1);
+                };
+            })
+        .catch((message) => {
+            alert(message);
+        });
+    }
+
+    document.body.appendChild(unityWebGlLoader);
+</script>

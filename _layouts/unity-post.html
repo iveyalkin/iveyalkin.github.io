@@ -2,6 +2,20 @@
 layout: page
 --
 
-{%- include unity-page.html -%}
+<div id="unity-container" class="unity-desktop">
+    <!-- {{ , page.unityCanvasHeight}} -->
+    <canvas id="unity-canvas" width={{ page.unityCanvasWidth }} height={{ page.unityCanvasHeight }} tabindex="-1" style="width: {{ page.unityCanvasWidth }}px; height: {{ page.unityCanvasHeight }}px; background: {{ page.unityCanvasBackground }}" />
+    <div id="unity-loading-bar">
+        <div id="unity-progress-bar-empty">
+            <div id="unity-progress-bar-full"></div>
+        </div>
+    </div>
+
+    <div id="unity-fullscreen-button"></div>
+</div>
+
+<h3>{{ page.buildTitle }}</h3>
 
 {{ content }}
+
+{%- include unity-loader.html -%}

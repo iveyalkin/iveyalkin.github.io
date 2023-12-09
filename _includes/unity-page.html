@@ -1,0 +1,22 @@
+--
+layout: page
+--
+
+{{ content }}
+
+<div id="unity-container" class="unity-desktop">
+    <!-- {{ page.unityCanvasWIdth, page.unityCanvasHeight}} -->
+    <canvas id="unity-canvas" width=960 height=600 tabindex="-1" style="width: 960px; height: 600px;" />
+    <div id="unity-loading-bar">
+        <div id="unity-progress-bar-empty">
+            <div id="unity-progress-bar-full"></div>
+        </div>
+    </div>
+
+    <div id="unity-fullscreen-button"></div>
+
+    <div id="unity-build-title">Landscape WebGL demo</div>
+    </div>
+</div>
+
+<script src="assets/js/unity-page.js"></script>

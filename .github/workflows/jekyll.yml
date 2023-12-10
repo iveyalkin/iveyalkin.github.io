@@ -39,7 +39,7 @@ jobs:
         uses: actions/upload-artifact@v3
         with:
           name: Build
-          path: "playground/landscape"
+          path: "**"
   # Build job
   build:
     runs-on: ubuntu-latest

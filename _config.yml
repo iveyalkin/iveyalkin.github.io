@@ -36,7 +36,7 @@ plugins:
 
 title: IV business card
 description: >- # ignore newlines
-  IV: Unity / Android / Code monkey
+  Unity / Android / Code monkey
 domain: iveyalkin.github.io
 baseurl: "" # the subpath of the site, e.g. /blog
 url: https://iveyalkin.github.io # the base hostname & protocol

@@ -44,17 +44,17 @@ permalink: /about
 
 </div>
 
-<div class="printable-only">
-
-### Ihar Veyalkin
-email: iv.conduct@gmail.com<br/>
-location: Vilnius, Lithuania<br/>
-
+<div class="printable-only" style="display: flex; flex-direction: column; align-items: flex-end;">
+    <div>
+        <h3> Ihar Veyalkin </h3>
+        email: iv.conduct@gmail.com<br/>
+        location: Vilnius, Lithuania<br/>
+    </div>
 </div>
 
 ---
 
-## Present
+### Present
 #### Mobile game developer <span class="non-printable">:joystick:</span>
 Since 2019 <br/>
 Unity, C# <br/>
@@ -70,7 +70,7 @@ Responsibilities & contribution:
 
 Experience with: Unity game engine, Unity batchmode & build automation, Git, GitLab CI/CD, Docker/Podman, shell scripts
 
-## Past
+### Past
 #### Android software engineer <span class="non-printable">:iphone:</span>
 2018-2019 <br/>
 Android SDK & NDK, Java, Kotlin, C++
@@ -86,9 +86,12 @@ Android SDK, Java, Kotlin
 Android SDK, Java <br/>
 iOS, Obj-C
 
----
-Education: MS in CS <span class="non-printable">:man_student:</span>
+#### Education
+MS in CS <span class="non-printable">:man_student:</span>
 
 <div class="non-printable">
+
+---
+
 Other tags: JavaScript, HTML, CSS, SQL
 </div>

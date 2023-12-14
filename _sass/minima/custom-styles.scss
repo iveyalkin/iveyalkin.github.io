@@ -10,10 +10,18 @@
         display: block;
     }
 
+    .page-content {
+        margin: 0;
+    }
+
     .post-content {
+        h3 {
+            border-bottom: 1px solid #000;
+        }
+
         h1, h2, h3, h4, h5, h6 {
             margin-top: 10px;
-            margin-bottom: 0px;
+            margin-bottom: 0;
         }
     }
 }
@@ -27,4 +35,8 @@
 .footer-col .social-links {
     display: flex;
     justify-content: flex-end;
+}
+
+.social-media-list {
+    margin: 0;
 }

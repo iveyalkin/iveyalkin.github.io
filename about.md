@@ -4,7 +4,7 @@ title: About me
 permalink: /about
 ---
 
-<div style="font-size:8pt; color:#CCC">
+<div class="non-printable" style="font-size:8pt; color:#CCC">
 &lt;!--
     <div style="font-size:16pt; padding-left:12px;">
         <a href="#present">! HR friendly version ¡</a>
@@ -14,7 +14,7 @@ permalink: /about
 
 ## ref\* IV; // :space_invader:
 
-<div style="background-color:#888; color:#CCC; box-shadow:10px 10px; padding: 8px; margin-bottom:32px;">
+<div class="non-printable" style="background-color:#888; color:#CCC; box-shadow:10px 10px; padding: 8px; margin-bottom:32px;">
     IV = (ref*) malloc
         <div style="display: inline; font-size:16pt; color:#EEE">
             (<a style="color:#FFF" href="#code-space-time">Code monkey</a> | Android | Unity)
@@ -29,13 +29,16 @@ permalink: /about
     free (IV); // :bomb:
 </div>
 
+<div class="non-printable">
+
 [[email me]](mailto:iv.conduct@gmail.com)
 [[discord]]()
 [[More Contacts]](/contacts)
 
-<a name="code-space-time" />
-<div style="color:#DDD">
-// ^ Code, Space, and Time, actually.
+    <a name="code-space-time" />
+    <div style="color:#DDD">
+    // ^ Code, Space, and Time, actually.
+    </div>
 </div>
 
 ---

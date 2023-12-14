@@ -39,14 +39,17 @@ permalink: /about
 </div>
 
 <div class="non-printable">
-[\[email me\]](mailto:iv.conduct@gmail.com)
-[\[More Contacts\]](/contacts)
+
+[[email me]](mailto:iv.conduct@gmail.com) / [[more contacts]](/contacts)
+
 </div>
 
 <div class="printable-only">
-Ihar Veyalkin
-email: iv.conduct@gmail.com
-location: Vilnius, Lithuania
+
+### Ihar Veyalkin
+email: iv.conduct@gmail.com<br/>
+location: Vilnius, Lithuania<br/>
+
 </div>
 
 ---

@@ -1,5 +1,8 @@
 @media print {
-    .non-printable {
+    .non-printable,
+    .site-header,
+    .post-header,
+    .site-footer {
         display: none;
     }
 
@@ -19,4 +22,9 @@
     .printable-only {
         display: none;
     }
+}
+
+.footer-col .social-links {
+    display: flex;
+    justify-content: flex-end;
 }

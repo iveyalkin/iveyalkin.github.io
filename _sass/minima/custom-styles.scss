@@ -14,12 +14,6 @@
 }
 
 @media print {
-    .about-me-header {
-        display: flex;
-        flex-direction: column;
-        align-items: flex-end;
-    }
-
     .non-printable,
     .site-header,
     .post-header,
@@ -29,6 +23,12 @@
 
     .printable-only {
         display: block;
+    }
+
+    .about-me-header {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
     }
 
     .page-content {

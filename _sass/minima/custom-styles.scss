@@ -1,4 +1,25 @@
+.footer-col .social-links {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.social-media-list {
+    margin: 0;
+}
+
+@media screen {
+    .printable-only {
+        display: none;
+    }
+}
+
 @media print {
+    .about-me-header {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+    }
+
     .non-printable,
     .site-header,
     .post-header,
@@ -11,7 +32,7 @@
     }
 
     .page-content {
-        margin: 0;
+        padding: 0;
     }
 
     .post-content {
@@ -19,24 +40,14 @@
             border-bottom: 1px solid #000;
         }
 
-        h1, h2, h3, h4, h5, h6 {
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
             margin-top: 10px;
             margin-bottom: 0;
         }
     }
-}
-
-@media screen {
-    .printable-only {
-        display: none;
-    }
-}
-
-.footer-col .social-links {
-    display: flex;
-    justify-content: flex-end;
-}
-
-.social-media-list {
-    margin: 0;
 }

@@ -44,15 +44,17 @@ permalink: /about
 
 </div>
 
-<div class="printable-only" style="display: flex; flex-direction: column; align-items: flex-end;">
+<div class="printable-only about-me-header">
     <div>
-        <h3> Ihar Veyalkin </h3>
+        <h4> Ihar Veyalkin </h4>
         email: iv.conduct@gmail.com<br/>
         location: Vilnius, Lithuania<br/>
     </div>
 </div>
 
----
+<div class="non-printable">
+<hr />
+</div>
 
 ### Present
 #### Mobile game developer <span class="non-printable">:joystick:</span>
@@ -90,8 +92,7 @@ iOS, Obj-C
 MS in CS <span class="non-printable">:man_student:</span>
 
 <div class="non-printable">
-
----
+<hr />
 
 Other tags: JavaScript, HTML, CSS, SQL
 </div>

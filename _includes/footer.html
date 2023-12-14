@@ -1,11 +1,21 @@
-<footer class="site-footer h-card">
+<footer class="site-footer h-card non-printable">
     <data class="u-url" href="{{ "/" | relative_url }}"></data>
   
     <div class="wrapper">
   
       <div class="footer-col-wrapper">
         <div class="footer-col">
-            <p>{{ site.description | escape }}</p>
+          <div>{{ site.description | escape }}</div>
+          {%- if site.author %}
+            <div class="contact-list">
+              {% if site.author.name -%}
+                <span class="p-name">{{ site.author.name | escape }}:</span>
+              {% endif -%}
+              {% if site.author.email -%}
+                <a class="u-email" href="mailto:{{ site.author.email }}">{{ site.author.email }}</a>
+              {%- endif %}
+            </div>
+          {%- endif %}
         </div>
         <div class="footer-col">
             <div class="social-links">
@@ -13,17 +23,8 @@
             </div>
         </div>
         <div class="footer-col">
-            {%- if site.author %}
-              <div class="contact-list">
-                {% if site.author.name -%}
-                  <div class="p-name">{{ site.author.name | escape }}: </div>
-                {% endif -%}
-                {% if site.author.email -%}
-                  <div><a class="u-email" href="mailto:{{ site.author.email }}">{{ site.author.email }}</a></div>
-                {%- endif %}
-              </div>
-            {%- endif %}
-            </div>
+            
+        </div>
       </div>
   
     </div>

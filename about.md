@@ -4,7 +4,9 @@ title: About me
 permalink: /about
 ---
 
-<div class="non-printable" style="font-size:8pt; color:#CCC">
+<div class="non-printable">
+
+<div style="font-size:8pt; color:#CCC">
 &lt;!--
     <div style="font-size:16pt; padding-left:12px;">
         <a href="#present">! HR friendly version ¡</a>
@@ -14,7 +16,7 @@ permalink: /about
 
 ## ref\* IV; // :space_invader:
 
-<div class="non-printable" style="background-color:#888; color:#CCC; box-shadow:10px 10px; padding: 8px; margin-bottom:32px;">
+<div style="background-color:#888; color:#CCC; box-shadow:10px 10px; padding: 8px; margin-bottom:32px;">
     IV = (ref*) malloc
         <div style="display: inline; font-size:16pt; color:#EEE">
             (<a style="color:#FFF" href="#code-space-time">Code monkey</a> | Android | Unity)
@@ -29,21 +31,28 @@ permalink: /about
     free (IV); // :bomb:
 </div>
 
+<a name="code-space-time" />
+<div style="color:#DDD">
+// ^ Code, Space, and Time, actually.
+</div>
+
+</div>
+
 <div class="non-printable">
+[\[email me\]](mailto:iv.conduct@gmail.com)
+[\[More Contacts\]](/contacts)
+</div>
 
-[[email me]](mailto:iv.conduct@gmail.com)
-[[discord]]()
-[[More Contacts]](/contacts)
-
-    <a name="code-space-time" />
-    <div style="color:#DDD">
-    // ^ Code, Space, and Time, actually.
-    </div>
+<div class="printable-only">
+Ihar Veyalkin
+email: iv.conduct@gmail.com
+location: Vilnius, Lithuania
 </div>
 
 ---
+
 ## Present
-#### Mobile game developer :joystick:
+#### Mobile game developer <span class="non-printable">:joystick:</span>
 Since 2019 <br/>
 Unity, C# <br/>
 Mobile game genres:
@@ -51,30 +60,32 @@ Mobile game genres:
 - Idler
 - Hyper Casual
 
-Responsibilities & Contribution:
-- Build MVPs from the ground up. Design architecture. Implement Gameplay and Business features.
+Responsibilities & contribution:
+- Build MVPs from the ground up. Design an architecture. Implement gameplay and business features.
 - Setup and support CI/CD build pipelines. Orchestrate multiplatform builds.
 - Maintain projects during various stages like User tests, A/B, Tech/Soft/Global launch phases.
 
-Experiance with: Unity game engine, Unity batchmode & build automation, Git, GitLab CI/CD, Docker/Podman, Bash
+Experience with: Unity game engine, Unity batchmode & build automation, Git, GitLab CI/CD, Docker/Podman, shell scripts
 
 ## Past
-#### Android software engineer :iphone:
+#### Android software engineer <span class="non-printable">:iphone:</span>
 2018-2019 <br/>
 Android SDK & NDK, Java, Kotlin, C++
 - Karaoke app (audio processing, Superpowered SDK)
 
-#### Self-employed Android software engineer :iphone:
+#### Self-employed Android software engineer <span class="non-printable">:iphone:</span>
 2015-2018 <br/>
 Android SDK, Java, Kotlin
 - Consumer service online directory platform
 
-#### Android/iOS software engineer :iphone:
+#### Android/iOS software engineer <span class="non-printable">:iphone:</span>
 2012-2015 <br/>
 Android SDK, Java <br/>
 iOS, Obj-C
 
 ---
-Education: MS in CS :man_student:
+Education: MS in CS <span class="non-printable">:man_student:</span>
 
+<div class="non-printable">
 Other tags: JavaScript, HTML, CSS, SQL
+</div>

@@ -1,7 +1,22 @@
-@media print
-{
-    .non-printable
-    {
+@media print {
+    .non-printable {
+        display: none;
+    }
+
+    .printable-only {
+        display: block;
+    }
+
+    .post-content {
+        h1, h2, h3, h4, h5, h6 {
+            margin-top: 10px;
+            margin-bottom: 0px;
+        }
+    }
+}
+
+@media screen {
+    .printable-only {
         display: none;
     }
 }

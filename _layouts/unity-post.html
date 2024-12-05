@@ -2,9 +2,9 @@
 layout: page
 ---
 
+<!-- unity-desktop => webgl-desktop for unification -->
 <div id="unity-container" class="unity-desktop">
-    <!-- {{ , page.unityCanvasHeight}} -->
-    <canvas id="unity-canvas" width={{ page.unityCanvasWidth }} height={{ page.unityCanvasHeight }} tabindex="-1" style="width: {{ page.unityCanvasWidth }}px; height: {{ page.unityCanvasHeight }}px; background: {{ page.unityCanvasBackground }}" />
+    <canvas id="unity-canvas" width={{ page.canvasWidth }} height={{ page.canvasHeight }} tabindex="-1" style="width: {{ page.canvasWidth }}px; height: {{ page.canvasHeight }}px; background: {{ page.canvasBackground }}" />
     <div id="unity-loading-bar">
         <div id="unity-progress-bar-empty">
             <div id="unity-progress-bar-full"></div>

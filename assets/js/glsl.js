@@ -30,19 +30,22 @@ function createProgram(gl, vertexShader, fragmentShader) {
     return null;
 }
 
+// expected vsRelativePath and fsRelativePath to be defined in the HTML
 document.addEventListener("DOMContentLoaded", async function() {
     const canvas = document.getElementById("webgl-canvas");
-    const gl = canvas.getContext("webgl");
+    const gl = canvas.getContext("webgl", {
+        antialias: true,  // Enable MSAA
+        alpha: true,
+        preserveDrawingBuffer: true
+    });
 
     if (!gl) {
         console.error("WebGL not supported");
         return;
     }
 
-// todo: support preprocessing
-// {{ '/assets/shaders/rising-sun/vertex.glsl' | relative_url }}
-    const vertexShaderSource = await loadShader("/assets/shaders/rising-sun/vertex.glsl");
-    const fragmentShaderSource = await loadShader("/assets/shaders/rising-sun/fragment.glsl");
+    const vertexShaderSource = await loadShader(vsRelativePath);
+    const fragmentShaderSource = await loadShader(fsRelativePath);
     
     const vertexShader = createShader(gl, gl.VERTEX_SHADER, vertexShaderSource);
     const fragmentShader = createShader(gl, gl.FRAGMENT_SHADER, fragmentShaderSource);

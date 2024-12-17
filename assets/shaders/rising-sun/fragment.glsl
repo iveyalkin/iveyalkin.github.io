@@ -1,5 +1,16 @@
 precision mediump float;
+
 uniform vec2 u_resolution;
+
+// background checkerboard pattern to highlight the shape
+vec3 checkerboard(vec2 uv, float size) {
+    uv.x *= u_resolution.x / u_resolution.y; // ratio
+    vec2 checkPos = floor(uv * size);
+    float pattern = mod(checkPos.x + checkPos.y, 2.0);
+    float colorA = 0.01;
+    float colorB = 0.1;
+    return vec3(pattern * colorA + colorB);
+}
 
 // cosine gradient generator
 // realtime representation of the palette http://dev.thi.ng/gradients/
@@ -16,9 +27,6 @@ float sdPie(in vec2 p, in vec2 c, in float r) {
 }
 
 void main() {
-    // vec2 st = gl_FragCoord.xy / u_resolution;
-    // gl_FragColor = vec4(st.x, st.y, 0.5 + 0.5 * sin(st.x * 10.0), 1.0);
-
     // normalized pixel coordinates
     vec2 p = (gl_FragCoord.xy * 2.0 - u_resolution.xy) / u_resolution.y;
 
@@ -51,7 +59,14 @@ void main() {
     }
 
     // coloring
-    vec3 col = (dd > 0.0) ? vec3(0.0, 0.0, 0.0) : gradientColor;
+    vec3 col = mix(gradientColor, vec3(0.0), step(0.0, dd));
 
-    gl_FragColor = vec4(col, 1.0);
+    // Create checkerboard background pattern
+    vec2 uv = gl_FragCoord.xy / u_resolution.xy;
+    vec3 background = checkerboard(uv, 20.0);
+
+    float alpha = clamp(1.0 - length(p), 0.0, 1.0);
+    vec3 finalColor = mix(background, col, alpha);
+
+    gl_FragColor = vec4(finalColor, 1.0);
 }

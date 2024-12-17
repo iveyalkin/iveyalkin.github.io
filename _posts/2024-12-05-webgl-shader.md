@@ -5,7 +5,9 @@ date: 2024-12-05 11:49:00 +0300
 categories: playground
 canvasWidth: 960
 canvasHeight: 600
-canvasBackground: #231F20
+canvasBackground: transparent
+vsPath: "/assets/shaders/rising-sun/vertex.glsl"
+fsPath: "/assets/shaders/rising-sun/fragment.glsl"
 ---
 
 A tiny WebGL GLSL shader demo called "Rising Sun."

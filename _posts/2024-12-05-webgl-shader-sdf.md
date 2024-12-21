@@ -1,12 +1,11 @@
 ---
-layout: webgl-post
-title: WebGL GLSL Demo
+layout: webgl-simple-post
+title: WebGL GLSL Demo. Constructing shapes with SDF
 date: 2024-12-05 11:49:00 +0300
-categories: playground
+categories: shaders
 canvasWidth: 960
 canvasHeight: 600
 canvasBackground: transparent
-vsPath: "/assets/shaders/rising-sun/vertex.glsl"
 fsPath: "/assets/shaders/rising-sun/fragment.glsl"
 ---
 

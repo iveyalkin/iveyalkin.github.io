@@ -2,7 +2,7 @@
 layout: page
 title: Implementing Roslyn APIs in Unity
 date: 2024-12-17 22:56:00 +0300
-categories: attic
+categories: development
 ---
 
 This will be a good ol' post about a particular use case. JSON parsing, to be precise.

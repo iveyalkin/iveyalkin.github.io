@@ -1,7 +1,6 @@
 precision mediump float;
 
 uniform vec2 u_resolution;
-varying vec2 v_texCoord;
 
 // background checkerboard pattern to highlight the shape
 vec3 checkerboard(vec2 uv, float size) {

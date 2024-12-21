@@ -1,0 +1,18 @@
+---
+layout: page
+---
+
+<script type="text/javascript">
+    const vsRelativePath = "{{ page.vsPath | relative_url }}" || "{{ 'assets/shaders/common/vertex.glsl' | relative_url }}";
+    const fsRelativePath = "{{ page.fsPath | relative_url }}";
+    const backgroundTextureRelativePath = "{{ page.backgroundTexturePath | relative_url }}";
+</script>
+<script type="text/javascript" src="{{ '/assets/js/glsl.js' | relative_url }}"></script>
+
+<h3>{{ page.buildTitle }}</h3>
+
+{{ content }}
+
+<div id="webgl-container" class="webgl-desktop" style="width: 100%; display: flex; justify-content: center; align-items: center;">
+    <canvas id="webgl-canvas" width={{ page.canvasWidth }} height={{ page.canvasHeight }} tabindex="-1" style="width: {{ page.canvasWidth }}px; height: {{ page.canvasHeight }}px; background: {{ page.canvasBackground }};"></canvas>
+</div>

@@ -1,50 +1,34 @@
 // Create and load the texture
-function loadTexture(gl, url) {
+async function loadBitmap(url) {
+    return new Promise((resolve, reject) => {
+        const bitmap = new Image();
+        bitmap.onerror = () => reject(new Error('Failed to load texture'));
+        bitmap.onload = () => resolve(bitmap);
+        bitmap.src = url;
+    });
+}
+
+function BindTexture(gl, srcBitmap, textureUniformLocation) {
     const texture = gl.createTexture();
     gl.bindTexture(gl.TEXTURE_2D, texture);
-
-    // Put temporary 1x1 pixel until image loads 
     gl.texImage2D(
         gl.TEXTURE_2D,
         0, // level
         gl.RGBA, // internalFormat
-        1, // width
-        1, // height
-        0, // border
         gl.RGBA, // srcFormat
         gl.UNSIGNED_BYTE, // srcType
-        new Uint8Array([0, 0, 255, 255]), // pixel color: opaque blue
+        srcBitmap
     );
 
-    const image = new Image();
-    image.onload = function() {
-        gl.bindTexture(gl.TEXTURE_2D, texture);
-        gl.texImage2D(
-            gl.TEXTURE_2D,
-            0,
-            gl.RGBA,
-            gl.RGBA,
-            gl.UNSIGNED_BYTE,
-            image
-        );
+    if (isPowerOf2(srcBitmap.width) && isPowerOf2(srcBitmap.height)) {
+        gl.generateMipmap(gl.TEXTURE_2D);
+    } else {
+        gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_WRAP_S, gl.CLAMP_TO_EDGE);
+        gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_WRAP_T, gl.CLAMP_TO_EDGE);
+        gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MIN_FILTER, gl.LINEAR);
+    }
 
-        // WebGL1 has different requirements for power of 2 images
-        // vs. non power of 2 images so check if the image is a
-        // power of 2 in both dimensions.
-        if (isPowerOf2(image.width) && isPowerOf2(image.height)) {
-            // Yes, it's a power of 2. Generate mips.
-            gl.generateMipmap(gl.TEXTURE_2D);
-        } else {
-            // No, it's not a power of 2. Turn off mips and set
-            // wrapping to clamp to edge
-            gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_WRAP_S, gl.CLAMP_TO_EDGE);
-            gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_WRAP_T, gl.CLAMP_TO_EDGE);
-            gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MIN_FILTER, gl.LINEAR);
-        }
-    };
-    image.src = url;
-
-    return texture;
+    gl.uniform1i(textureUniformLocation, 0); // Use texture unit 0
 
     function isPowerOf2(value) {
         return (value & (value - 1)) === 0;
@@ -101,6 +85,9 @@ document.addEventListener("DOMContentLoaded", async function() {
     gl.clearColor(0, 0, 0, 0);
     gl.clear(gl.COLOR_BUFFER_BIT);
 
+    // Flip image pixels into the bottom-to-top order that WebGL expects.
+    gl.pixelStorei(gl.UNPACK_FLIP_Y_WEBGL, true);
+
     const vertexShaderSource = await loadShader(vsRelativePath);
     const fragmentShaderSource = await loadShader(fsRelativePath);
     
@@ -154,9 +141,9 @@ document.addEventListener("DOMContentLoaded", async function() {
         );
         gl.enableVertexAttribArray(texCoordAttributeLocation);
     
-        const backgroundTexture = loadTexture(gl, backgroundTextureRelativePath);
+        const srcBitmap = await loadBitmap(backgroundTextureRelativePath);
         const textureUniformLocation = gl.getUniformLocation(program, "u_texture");
-        gl.uniform1i(textureUniformLocation, 0); // Use texture unit 0
+        BindTexture(gl, srcBitmap,textureUniformLocation);
     }
 
     gl.drawArrays(gl.TRIANGLES, 0, 6);

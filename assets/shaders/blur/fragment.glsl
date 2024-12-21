@@ -5,9 +5,9 @@ varying vec2 v_texCoord;
 uniform sampler2D u_texture;
 
 const mat3 u_kernel = mat3(// 3x3 kernel weights
-    0.0, 1.0, 0.0,
     1.0, 1.0, 1.0,
-    0.0, 1.0, 0.0
+    1.0, 1.0, 1.0,
+    1.0, 1.0, 1.0
 );
 
 vec4 sampleNeighbor(vec2 offset) {

@@ -1,3 +1,18 @@
+#hello-there-banana {
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.header-text {
+    font-size: 1.5rem;
+    font-weight: semi-bold;
+}
+
+.header-link {
+    text-decoration: underline;
+    color: currentColor
+}
+
 .footer-col .social-links {
     display: flex;
     justify-content: flex-end;
@@ -5,6 +20,21 @@
 
 .social-media-list {
     margin: 0;
+}
+
+.post-list {
+    margin-top: 3rem;
+    border-left: 3px solid #535353;
+    padding-left: 2rem; 
+}
+
+.post-meta {
+    font-size: 0.7rem;
+}
+
+.post-link {
+    font-size: 1rem;
+    text-decoration: underline;
 }
 
 @media screen {

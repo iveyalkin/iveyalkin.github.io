@@ -4,45 +4,7 @@ title: About me
 permalink: /about
 ---
 
-<div class="non-printable">
-
-<div style="font-size:8pt; color:#CCC">
-&lt;!--
-    <div style="font-size:16pt; padding-left:12px;">
-        <a href="#present">! HR friendly version ¡</a>
-    </div>
---&gt;
-</div>
-
-## ref\* IV; // :space_invader:
-
-<div style="background-color:#888; color:#CCC; box-shadow:10px 10px; padding: 8px; margin-bottom:32px;">
-    IV = (ref*) malloc
-        <div style="display: inline; font-size:16pt; color:#EEE">
-            (<a style="color:#FFF" href="#code-space-time">Code monkey</a> | Android | Unity)
-        </div>;
-    <br/>
-    std::cout <<
-        <div style="padding-left:32px; color: #FFF">
-            "The monkey can discuss M-V-[P | VM | C] and the rest of the alphabet. Although, with SOLID understanding. :sweat_smile:"
-        </div>
-    << std::endl;
-    <br/>
-    free (IV); // :bomb:
-</div>
-
-<a name="code-space-time" />
-<div style="color:#DDD">
-// ^ Code, Space, and Time, actually.
-</div>
-
-</div>
-
-<div class="non-printable">
-
-[[email me]](mailto:iv.conduct@gmail.com) / [[more contacts]](/contacts)
-
-</div>
+{% include contacts.html %}
 
 <div class="printable-only about-me-header">
     <div>

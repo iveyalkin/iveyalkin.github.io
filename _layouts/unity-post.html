@@ -2,6 +2,8 @@
 layout: page
 ---
 
+{% include background.html %}
+
 <!-- unity-desktop => webgl-desktop for unification -->
 <div id="unity-container" class="unity-desktop">
     <canvas id="unity-canvas" width={{ page.canvasWidth }} height={{ page.canvasHeight }} tabindex="-1" style="width: {{ page.canvasWidth }}px; height: {{ page.canvasHeight }}px; background: {{ page.canvasBackground }}" />

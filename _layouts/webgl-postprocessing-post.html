@@ -2,6 +2,8 @@
 layout: page
 ---
 
+{% include background.html %}
+
 <script type="text/javascript">
     const vsRelativePath = "{{ page.vsPath | relative_url }}" || "{{ 'assets/shaders/common/vertex.glsl' | relative_url }}";
     const fsRelativePath = "{{ page.fsPath | relative_url }}";

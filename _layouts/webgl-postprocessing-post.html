@@ -1,5 +1,5 @@
 ---
-layout: page
+layout: iv-page
 ---
 
 {% include background.html %}
@@ -18,7 +18,7 @@ layout: page
 
 <div id="webgl-container" class="webgl-desktop"
     style="width: 100%; display: flex; justify-content: center; align-items: center;">
-    <div style="width: {{ page.canvasWidth }}px; height: {{ page.canvasHeight }}px; margin: 20px; 0px;">
+    <div style="width: {{ page.canvasWidth }}px; height: 100%; margin: 20px; 0px;">
         <p>Use slider to shift comparsion divider:</p>
         <input type="range" id="shaderSlider" min="0" max="100" style="width: 100%;">
         <canvas id="webgl-canvas" width={{ page.canvasWidth }} height={{ page.canvasHeight }} tabindex="-1"

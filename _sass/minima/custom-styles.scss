@@ -1,6 +1,40 @@
-#hello-there-banana {
+@font-face {
+    font-family: 'TerminalLikeRegular';
+    src: url('/assets/fonts/PixelifySans-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap; // Prevents FOIT (Flash of Invisible Text)
+}
+
+@font-face {
+    font-family: 'TerminalLikeHigh';
+    src: url('/assets/fonts/PixelifySans-Bold.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+.terminal-font-regular {
+    font-family: 'TerminalLikeRegular', monospace;
+}
+
+.terminal-font-high {
+    font-family: 'TerminalLikeHigh', monospace;
+}
+
+.site-title {
     text-transform: uppercase;
-    font-weight: bold;
+    font-weight: normal;
+}
+
+.site-header {
+    width: 100%;
+    border-top: none;
+    border-bottom: 1px solid lighten(#828282, 40%);
+    background-color: #111;
+
+    // Positioning context for the mobile navigation icon
+    position: fixed;
 }
 
 .header-text {
@@ -35,6 +69,27 @@
 .post-link {
     font-size: 1rem;
     text-decoration: underline;
+}
+
+.page-content {
+    padding:  $spacing-unit*2 0 0 0;
+}
+
+.page-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2rem 0 0 0;
+    border-top: 1px solid currentColor;
+}
+
+.page-footer a {
+    &:visited {
+        color: currentColor;
+    }
+    text-decoration: underline;
+    color: currentColor;
+    font-size: 1.5rem;
 }
 
 @media screen {

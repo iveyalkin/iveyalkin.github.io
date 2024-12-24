@@ -1,9 +1,7 @@
 ---
 layout: home
-title: ""   
+title: ""
 ---
-
-## Hello there :banana: 
 
 {% include background.html %}
 

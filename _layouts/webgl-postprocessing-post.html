@@ -8,12 +8,35 @@ layout: page
     const vsRelativePath = "{{ page.vsPath | relative_url }}" || "{{ 'assets/shaders/common/vertex.glsl' | relative_url }}";
     const fsRelativePath = "{{ page.fsPath | relative_url }}";
     const backgroundTextureRelativePath = "{{ page.backgroundTexturePath | relative_url }}";
+    window.shaderSliderValue = 0.5;
 </script>
 <script type="text/javascript" src="{{ '/assets/js/glsl.js' | relative_url }}"></script>
 
 <h3>{{ page.buildTitle }}</h3>
 
 {{ content }}
+
+<div style="width: 100%; display: flex; justify-content: center; align-items: center; margin: 20px 0;"></div>
+    <input type="range" id="shaderSlider" min="0" max="100" style="width: 200px;">
+    <span id="sliderValue" style="margin-left: 10px;">0.5</span>
+</div>
+
+<script>
+{
+    let sliderValue = document.getElementById('sliderValue');
+    let slider = document.getElementById('shaderSlider');
+
+    slider.value = window.shaderSliderValue * 100;
+
+    slider.addEventListener('input', (e) => {
+        let value = e.target.value / 100;
+        sliderValue.textContent = value.toFixed(2);
+
+        // Access this value in shader code
+        window.shaderSliderValue = value;
+    });
+}
+</script>
 
 <div id="webgl-container" class="webgl-desktop" style="width: 100%; display: flex; justify-content: center; align-items: center;">
     <canvas id="webgl-canvas" width={{ page.canvasWidth }} height={{ page.canvasHeight }} tabindex="-1" style="width: {{ page.canvasWidth }}px; height: {{ page.canvasHeight }}px; background: {{ page.canvasBackground }};"></canvas>

@@ -68,7 +68,7 @@ function createProgram(gl, vertexShader, fragmentShader) {
 }
 
 // expected vsRelativePath and fsRelativePath to be defined in the HTML
-document.addEventListener("DOMContentLoaded", async function() {
+document.addEventListener("DOMContentLoaded", async function () {
     const canvas = document.getElementById("webgl-canvas");
     const gl = canvas.getContext("webgl", {
         antialias: true,  // Enable MSAA
@@ -90,12 +90,44 @@ document.addEventListener("DOMContentLoaded", async function() {
 
     const vertexShaderSource = await loadShader(vsRelativePath);
     const fragmentShaderSource = await loadShader(fsRelativePath);
-    
+
     const vertexShader = createShader(gl, gl.VERTEX_SHADER, vertexShaderSource);
     const fragmentShader = createShader(gl, gl.FRAGMENT_SHADER, fragmentShaderSource);
     const program = createProgram(gl, vertexShader, fragmentShader);
 
+    if (!program) {
+        console.error("Failed to create shader program");
+        return;
+    }
+
+    if (!gl.getProgramParameter(program, gl.LINK_STATUS)) {
+        console.error(gl.getProgramInfoLog(program));
+        return;
+    }
+
     gl.useProgram(program);
+
+    const maxUniforms = {
+        vertex: gl.getParameter(gl.MAX_VERTEX_UNIFORM_VECTORS),
+        fragment: gl.getParameter(gl.MAX_FRAGMENT_UNIFORM_VECTORS),
+        varyings: gl.getParameter(gl.MAX_VARYING_VECTORS),
+        textureUnits: gl.getParameter(gl.MAX_TEXTURE_IMAGE_UNITS)
+    };
+
+    console.log('Shader Uniform Limits:', {
+        'Vertex Uniforms': maxUniforms.vertex,
+        'Fragment Uniforms': maxUniforms.fragment,
+        'Varyings': maxUniforms.varyings,
+        'Texture Units': maxUniforms.textureUnits
+    });
+
+    // Log shader uniforms for debugging
+    const numUniforms = gl.getProgramParameter(program, gl.ACTIVE_UNIFORMS);
+    console.log('Active uniforms:');
+    for (let i = 0; i < numUniforms; i++) {
+        const uniformInfo = gl.getActiveUniform(program, i);
+        console.log(`${uniformInfo.name} (${uniformInfo.type})`);
+    }
 
     const positionBuffer = gl.createBuffer();
     gl.bindBuffer(gl.ARRAY_BUFFER, positionBuffer);
@@ -140,11 +172,38 @@ document.addEventListener("DOMContentLoaded", async function() {
             8 // how many bytes inside the buffer to start from
         );
         gl.enableVertexAttribArray(texCoordAttributeLocation);
-    
+
         const srcBitmap = await loadBitmap(backgroundTextureRelativePath);
         const textureUniformLocation = gl.getUniformLocation(program, "u_texture");
-        BindTexture(gl, srcBitmap,textureUniformLocation);
+        BindTexture(gl, srcBitmap, textureUniformLocation);
     }
 
-    gl.drawArrays(gl.TRIANGLES, 0, 6);
+    window.renderContext = {
+        gl: gl,
+        sliderUniformLocation: gl.getUniformLocation(program, "u_postprocess_slider"),
+        timeUniformLocation: gl.getUniformLocation(program, "u_time"),
+        lastTime: 0.0,
+    }
+
+    // Initial draw call
+    render(performance.now());
 });
+
+// Render loop
+function render(currentTime) {
+    const renderContext = window.renderContext;
+
+    // Convert time to seconds
+    currentTime *= 0.001;
+
+    const deltaTime = currentTime - renderContext.lastTime;
+    renderContext.lastTime = currentTime;
+
+    renderContext.gl.uniform1f(renderContext.sliderUniformLocation, window.shaderSliderValue || 0.0);
+    renderContext.gl.uniform1f(renderContext.timeUniformLocation, deltaTime);
+    renderContext.gl.drawArrays(renderContext.gl.TRIANGLES, 0, 6);
+
+    window.renderContext = renderContext;
+
+    requestAnimationFrame(render);
+}

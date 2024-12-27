@@ -6,6 +6,8 @@
 <meta name="msapplication-TileColor" content="#da532c">
 <meta name="theme-color" content="#ffffff">
 
-{% if page.layout == 'unity-page' %}
-<link rel="stylesheet" href="/assets/css/unity-page-style.css">
+{% if page.layout == 'webgl-simple-post' or  page.layout == 'webgl-postprocessing-post' %}
+    <link rel="stylesheet" type="text/css" href="{{ '/assets/css/webgl-page.css' | relative_url }}">
+{% elsif page.layout == 'unity-post' %}
+    <link rel="stylesheet" type="text/css" href="{{ '/assets/css/unity-page.css' | relative_url }}">
 {% endif %}

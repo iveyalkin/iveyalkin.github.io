@@ -200,7 +200,7 @@ function render(currentTime) {
     renderContext.lastTime = currentTime;
 
     renderContext.gl.uniform1f(renderContext.sliderUniformLocation, window.shaderSliderValue || 0.0);
-    renderContext.gl.uniform1f(renderContext.timeUniformLocation, deltaTime);
+    renderContext.gl.uniform1f(renderContext.timeUniformLocation, currentTime);
     renderContext.gl.drawArrays(renderContext.gl.TRIANGLES, 0, 6);
 
     window.renderContext = renderContext;

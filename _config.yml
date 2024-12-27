@@ -29,6 +29,7 @@ plugins:
   - jemoji
   - jekyll-sitemap
   - jekyll-seo-tag
+  - jekyll-coffeescript
 
 #==========================
 # Meta
@@ -62,6 +63,9 @@ minima:
 header_pages:
   - about.md
   - contacts.md
+
+sass:
+  style: compressed
 
 # Exclude from processing.
 # The following items will not be processed, by default.

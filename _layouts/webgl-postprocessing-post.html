@@ -2,6 +2,8 @@
 layout: iv-page
 ---
 
+<link rel="stylesheet" type="text/css" href="{{ '/assets/css/webgl-page.css' | relative_url }}">
+
 {% include background.html %}
 
 <script type="text/javascript">
@@ -16,9 +18,8 @@ layout: iv-page
 
 {{ content }}
 
-<div id="webgl-container" class="webgl-desktop"
-    style="width: 100%; display: flex; justify-content: center; align-items: center;">
-    <div style="width: {{ page.canvasWidth }}px; height: 100%; margin: 20px; 0px;">
+<div class="webgl-container">
+    <div style="width: {{ page.canvasWidth }}px; height: 100%;">
         <p>Use slider to shift comparsion divider:</p>
         <input type="range" id="shaderSlider" min="0" max="100" style="width: 100%;">
         <canvas id="webgl-canvas" width={{ page.canvasWidth }} height={{ page.canvasHeight }} tabindex="-1"
@@ -28,11 +29,11 @@ layout: iv-page
 
 <script>
     {
-        let slider = document.getElementById('shaderSlider');
+        const slider = document.getElementById('shaderSlider');
         slider.value = window.shaderSliderValue * 100;
 
         slider.addEventListener('input', (e) => {
-            let value = e.target.value / 100;
+            const value = e.target.value / 100;
 
             // Access this value in shader code
             window.shaderSliderValue = value;

@@ -4,9 +4,13 @@ layout: iv-page
 
 {% include background.html %}
 
+<h3>{{ page.buildTitle }}</h3>
+
+{{ content }}
+
 <!-- unity-desktop => webgl-desktop for unification -->
-<div id="unity-container" class="unity-desktop">
-    <canvas id="unity-canvas" width={{ page.canvasWidth }} height={{ page.canvasHeight }} tabindex="-1" style="width: {{ page.canvasWidth }}px; height: {{ page.canvasHeight }}px; background: {{ page.canvasBackground }}" />
+<div id="unity-container" class="webgl-container">
+    <canvas id="unity-canvas" width={{ page.canvasWidth }} height={{ page.canvasHeight }} tabindex="-1" s</div>tyle="width: {{ page.canvasWidth }}px; height: {{ page.canvasHeight }}px; background: {{ page.canvasBackground }}"></canvas>
     <div id="unity-loading-bar">
         <div id="unity-progress-bar-empty">
             <div id="unity-progress-bar-full"></div>
@@ -14,10 +18,7 @@ layout: iv-page
     </div>
 
     <div id="unity-fullscreen-button"></div>
+    <div id="unity-warning"></div>
 </div>
-
-<h3>{{ page.buildTitle }}</h3>
-
-{{ content }}
 
 {%- include unity-loader.html -%}

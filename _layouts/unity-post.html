@@ -12,8 +12,9 @@ layout: iv-page
 <div id="unity-container" class="webgl-container">
     <canvas id="unity-canvas" width={{ page.canvasWidth }} height={{ page.canvasHeight }} tabindex="-1" s</div>tyle="width: {{ page.canvasWidth }}px; height: {{ page.canvasHeight }}px; background: {{ page.canvasBackground }}"></canvas>
     <div id="unity-loading-bar">
-        <div id="unity-progress-bar-empty">
-            <div id="unity-progress-bar-full"></div>
+        <p id="unity-progress-loading">Loading...</p>
+        <div id="unity-progress-bar-background">
+            <div id="unity-progress-bar-foreground"></div>
         </div>
     </div>
 

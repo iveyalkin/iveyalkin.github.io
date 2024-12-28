@@ -7,10 +7,20 @@
 
 // }
 
+// todo: 
+/*
+display: grid;
+  place-items: center;
+  grid-template-areas: "inner-div";
+*/
 #unity-canvas {
 
 }
 
+//todo:
+/*
+grid-area: inner-div;
+*/
 #unity-loading-bar {
     width: 100%;
     height: 100%;
@@ -18,26 +28,40 @@
     top: 0%;
     left: -50%;
     transform: translate(-100%);
-    //display: none;
 }
 
-#unity-progress-bar-empty {
+#unity-progress-bar-background {
     width: 141px;
     height: 18px;
-    background: url("{{ '/assets/images/unity-page/progress-bar-empty-dark.png' | relative_url }}") no-repeat center
+    border-radius: 20px;
+    border: solid 5px #fce5c3;
+    background: #7c8f96
+    //background: url("{{ '/assets/images/unity-page/progress-bar-empty-dark.png' | relative_url }}") no-repeat center
 }
 
-#unity-progress-bar-full {
+#unity-progress-bar-foreground {
     width: 0%;
     height: 100%;
-    background: url("{{ '/assets/images/unity-page/progress-bar-full-dark.png' | relative_url }}") no-repeat center
+    border-radius: 15px;
+    background: repeating-linear-gradient(120deg, #97d9ff, #97d9ff 20px, #70c6f9 20px, #70c6f9 40px);
+    // background: url("{{ '/assets/images/unity-page/progress-bar-full-dark.png' | relative_url }}") no-repeat center
+}
+
+#unity-progress-loading {
+    text-align: start;
+    font-size: 2em;
+    font-family:  'TerminalLikeRegular', monospace;
+    color: #fff7de;
+    margin-top: 10px;
 }
 
 #unity-warning {}
 
 #unity-fullscreen-button {
     cursor: pointer;
-    float: right;
+    position: absolute;
+    bottom: 0px;
+    right: 0px;
     width: 38px;
     height: 38px;
     background: url("{{ '/assets/images/unity-page/fullscreen-button.png' | relative_url }}") no-repeat center

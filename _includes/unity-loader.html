@@ -4,7 +4,7 @@
     // todo: jekyll can process coffeescript (plugin already added) https://jekyllrb.com/docs/assets/#coffeescript
     // so maybe use it instead of js
     {
-        const buildUrl = {{ "/playground/" | append: page.buildUrl | relative_url }};
+        const buildUrl = "{{ '/playground/'' | append: page.buildUrl | relative_url }}";
         const loaderUrl = buildUrl + "/WebGL.loader.js";
         const config = {
             arguments: [],

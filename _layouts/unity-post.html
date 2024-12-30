@@ -4,9 +4,9 @@ layout: iv-page
 
 {% include background.html %}
 
-<h3>{{ page.buildTitle }}</h3>
-
-{{ content }}
+{%- if page.canvasLocatin == "bottom" -%}
+    {{ content }}
+{%- endif -%}
 
 <!-- unity-desktop => webgl-desktop for unification -->
 <div id="unity-container" class="webgl-container">
@@ -23,3 +23,7 @@ layout: iv-page
 </div>
 
 {%- include unity-loader.html -%}
+
+{%- if page.canvasLocatin != "bottom" -%}
+    {{ content }}
+{%- endif -%}

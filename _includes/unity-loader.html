@@ -36,6 +36,13 @@
         const unityProgressBarFull = document.querySelector("#unity-progress-bar-foreground");
         const unityFullscreenButton = document.querySelector("#unity-fullscreen-button");
 
+        unityFullscreenButton.onclick = () => {
+            if (window.unityInstance)
+                window.unityInstance.SetFullscreen(1);
+            else
+                alert("Unity instance not loaded yet");
+        };
+
         if (/iPhone|iPad|iPod|Android/i.test(navigator.userAgent)) {
             // Mobile device style: fill the whole browser client area with the game canvas:
             const meta = document.createElement('meta');
@@ -60,11 +67,10 @@
                 unityProgressBarFull.style.width = 100 * progress + "%";
             })
                 .then((unityInstance) => {
-                    unityLoadingBar.style.display = "none";
+                    // keep a reference to communicate with the unity instance from native (web browser) domain
+                    window.unityInstance = unityInstance;
 
-                    unityFullscreenButton.onclick = () => {
-                        unityInstance.SetFullscreen(1);
-                    };
+                    unityLoadingBar.style.display = "none";
                 })
                 .catch((message) => {
                     alert(message);

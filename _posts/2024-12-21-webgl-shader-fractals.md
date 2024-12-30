@@ -11,3 +11,5 @@ backgroundTexturePath: "/assets/images/front-page/splash.webp"
 ---
 
 ### TBD
+
+[Shader code](https://github.com/iveyalkin/iveyalkin.github.io/blob/master/assets/shaders/fractals/fragment.glsl)

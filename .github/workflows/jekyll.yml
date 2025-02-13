@@ -40,11 +40,33 @@ jobs:
         with:
           name: Build
           path: "**"
+
+  # Download unity webgl artifact from a private repo
+  download-uber-driver-webgl-demo:
+    runs-on: ubuntu-latest
+    steps:
+      - name: List Releases
+        run: gh release list --repo iveyalkin/uber-driver
+        env:
+          GH_TOKEN: ${{ secrets.DOWNLOAD_RELEASE_ARTIFACTS }}
+      - name: Fetch asset
+        run: gh release download --pattern '*' --dir playground/uber-driver --repo iveyalkin/uber-driver --clobber
+        env:
+          GH_TOKEN: ${{ secrets.DOWNLOAD_RELEASE_ARTIFACTS }}
+      - name: List fetched result
+        run: ls -la playground/uber-driver
+      - name: Upload artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: Build
+          path: "**"
   
   # Build job
   build:
     runs-on: ubuntu-latest
-    needs: download-landscape-webgl-demo
+    needs:
+      - download-landscape-webgl-demo
+      - download-uber-driver-webgl-demo
     steps:
       - name: Checkout
         uses: actions/checkout@v4

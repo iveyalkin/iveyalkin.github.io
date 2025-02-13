@@ -1,6 +1,6 @@
 ---
 layout: unity-post
-title: WebGL "Landscape" Unity Demo
+title: "Landscape" WebGL Unity demo
 date: 2023-09-15 11:11:00 +0300
 categories: playground
 buildUrl: landscape
@@ -14,7 +14,7 @@ canvasLocatin: top
 
 TBD
 
-A WebGL demo called "Landscape". The ~~[demo project](https://github.com/iveyalkin/landscape-webgl)~~ includes:
+A WebGL demo called "Landscape". The [demo project](https://github.com/iveyalkin/landscape-webgl) includes:
 - Ambience Audio system
 - URP 17
 - Basic Menu system

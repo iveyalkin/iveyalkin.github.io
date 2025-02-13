@@ -1,6 +1,6 @@
 ---
 layout: unity-post
-title: "Landscape" WebGL Unity demo
+title: Landscape WebGL Unity demo
 date: 2023-09-15 11:11:00 +0300
 categories: playground
 buildUrl: landscape

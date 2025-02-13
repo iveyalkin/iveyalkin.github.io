@@ -38,7 +38,7 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-artifact@v4
         with:
-          name: Build
+          name: landscape-build
           path: "**"
 
   # Download unity webgl artifact from a private repo
@@ -58,7 +58,7 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-artifact@v4
         with:
-          name: Build
+          name: uber-driver-build
           path: "**"
   
   # Build job
@@ -79,10 +79,14 @@ jobs:
       - name: Setup Pages
         id: pages
         uses: actions/configure-pages@v5
-      - name: Download build
+      - name: Download landscape build
         uses: actions/download-artifact@v4
         with:
-          name: Build
+          name: landscape-build
+      - name: Download uber driver build
+        uses: actions/download-artifact@v4
+        with:
+          name: uber-driver-build
       - name: Build with Jekyll
         # Outputs to the './_site' directory by default
         run: bundle exec jekyll build --baseurl "${{ steps.pages.outputs.base_path }}"
